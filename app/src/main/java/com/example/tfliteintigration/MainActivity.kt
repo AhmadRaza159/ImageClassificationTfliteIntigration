@@ -130,8 +130,8 @@ class MainActivity : AppCompatActivity() {
 
 // Releases model resources if no longer used.
         model.close()
-        txtOutput.text ="output: ${if (outputFeature0.floatArray[0]>=confidenceFactor) "OK" else "Miss_Pick"} \n" +
-                "Confidence: ${outputFeature0.floatArray[0]}"
+        txtOutput.text ="Fault: ${if (outputFeature0.floatArray[0]>=confidenceFactor) "OK" else "Miss_Pick"} \n" +
+                "Confidence: ${String.format("%.02f", outputFeature0.floatArray[0]*100)}%"
 
 
 // Releases model resources if no longer used.
